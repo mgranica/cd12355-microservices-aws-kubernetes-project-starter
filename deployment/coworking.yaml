@@ -53,4 +53,19 @@ spec:
             secretKeyRef:
               name: coworking-secret
               key: db_password
+        - name: DB_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: coworking-analytics-config
+              key: DB_USER
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: coworking-analytics-config
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: coworking-analytics-config
+              key: DB_PORT
       restartPolicy: Always
